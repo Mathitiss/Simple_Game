@@ -22,8 +22,10 @@ class Game:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
+            elif event.type == pygame.KEYUP:
+                self.keyup_events(event)
 
-    def keydown_events(self, event):
+    def keyup_events(self, event):
         if event.key == pygame.K_ESCAPE:
             sys.exit()
 
@@ -41,7 +43,7 @@ class Settings:
     def __init__(self):
         self.screen_width = 1600
         self.screen_height = 900
-        self.bg_color = (25, 25, 112)
+        self.bg_color = (1, 1, 1)
 
 if __name__ == "__main__":
     Game().run_game()
